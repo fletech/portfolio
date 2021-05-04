@@ -1,0 +1,92 @@
+header {
+  border-bottom: solid 1px dodgerblue;
+  padding: 0 5rem;
+  width: 100%;
+  min-height: 5rem;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  .logo-container {
+    width: 12rem;
+    display: flex;
+    align-items: center;
+    .logo-image-container {
+      width: 4rem;
+      min-width: 3rem;
+      min-height: 3rem;
+      height: 4rem;
+      overflow: hidden;
+      border-radius: 50%;
+      img {
+        width: 100%;
+      }
+    }
+    .logo-name {
+      width: 8rem;
+    }
+  }
+  div.menu {
+    height: 50px;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    .nav-bar {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      ul.nav-list {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        transition: opacity 0.5s ease;
+        margin-right: 20px;
+        a {
+          margin-left: 2rem;
+          li {
+            text-align: right;
+            list-style: none;
+          }
+        }
+      }
+      ul.nav-false {
+        transition: all 0.5s ease;
+        pointer-events: none;
+        opacity: 0;
+        position: absolute;
+        left: -1000%;
+      }
+      ul.nav-true {
+        opacity: 1;
+      }
+
+      .toggle-menu {
+        border-radius: 30px;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 1s ease;
+        cursor: pointer;
+        &:hover {
+          background-color: dodgerblue;
+        }
+        .icon-container {
+          width: 50px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: all 1s ease;
+        }
+      }
+    }
+  }
+}
+
+@media screen and(max-width:768px) {
+  header {
+    padding: 1rem;
+  }
+}

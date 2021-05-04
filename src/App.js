@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useRef } from "react";
 
-function App() {
+//Import Style
+import "./styles/app.scss";
+
+import Footer from "./components/Footer";
+import Header from "./components/Header";
+import Main from "./components/Main";
+
+const App = () => {
+  //useRef
+  const documentRef = useRef(null);
+  //UseState
+  const [menuDisplay, setMenuDisplay] = useState(false);
+  const menuDisplayHandler = (menuDisplay) => {
+    !menuDisplay ? setMenuDisplay(true) : setMenuDisplay(false);
+    console.log(menuDisplay);
+    console.log(documentRef.current.header);
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App" ref={documentRef}>
+      <Header
+        menuDisplay={menuDisplay}
+        setMenuDisplay={setMenuDisplay}
+        menuDisplayHandler={menuDisplayHandler}
+      />
+      <Main />
+      <Footer />
     </div>
   );
-}
+};
 
 export default App;
