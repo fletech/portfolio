@@ -21,13 +21,13 @@ const Header = ({ menuDisplay, menuDisplayHandler }) => {
       <div className="menu">
         <nav className="nav-bar">
           <ul className={`nav-list nav-${menuDisplay}`}>
-            <a href="">
+            <a href="/">
               <li className="nav-item">Resume</li>
             </a>
-            <a href="">
+            <a href="/">
               <li className="nav-item">Portfolio</li>
             </a>
-            <a href="">
+            <a href="/">
               <li className="nav-item">Contact</li>
             </a>
           </ul>
