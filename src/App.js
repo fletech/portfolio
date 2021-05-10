@@ -9,7 +9,7 @@ import Main from "./components/Main";
 
 const App = () => {
   //UseState
-  const [menuDisplay, setMenuDisplay] = useState(false);
+  const [menuDisplay, setMenuDisplay] = useState(true);
   const menuDisplayHandler = (menuDisplay) => {
     !menuDisplay ? setMenuDisplay(true) : setMenuDisplay(false);
   };

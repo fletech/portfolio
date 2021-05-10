@@ -1,8 +1,5 @@
 import React from "react";
 
-import { FontAwesomeIcon as Icon } from "@fortawesome/react-fontawesome";
-import { faReact } from "@fortawesome/free-brands-svg-icons";
-
 const Footer = () => {
   return (
     <footer>
@@ -14,7 +11,7 @@ const Footer = () => {
             target="_blank"
             rel="noreferrer"
           >
-            <Icon icon={faReact} color={"dodgerblue"} />{" "}
+            <i className="fab fa-react"></i>{" "}
           </a>
           by{" "}
           <a

@@ -1,7 +1,17 @@
 footer {
-  background-color: #474747;
+  background-color: #323232;
   width: 100vw;
-  height: 10vh;
+  height: 5vh;
   display: flex;
   justify-content: center;
+  align-items: center;
+  div p {
+    color: white !important;
+    a i {
+      color: orange;
+    }
+    span {
+      color: orange;
+    }
+  }
 }
