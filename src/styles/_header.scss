@@ -1,5 +1,5 @@
 header {
-  border-bottom: solid 1px dodgerblue;
+  background-color: #474747;
   padding: 0 5rem;
   width: 100%;
   min-height: 5rem;
@@ -69,6 +69,7 @@ header {
         align-items: center;
         justify-content: center;
         transition: all 1s ease;
+        background: transparent;
         cursor: pointer;
         &:hover {
           background-color: dodgerblue;
@@ -79,6 +80,10 @@ header {
           align-items: center;
           justify-content: center;
           transition: all 1s ease;
+          background: transparent;
+          svg {
+            background: transparent;
+          }
         }
       }
     }
