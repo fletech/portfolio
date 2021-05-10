@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Header = ({ menuDisplay, menuDisplayHandler }) => {
   return (
@@ -11,21 +12,23 @@ const Header = ({ menuDisplay, menuDisplayHandler }) => {
         </div> */}
 
         <div className="logo-name">
-          <a href="/">
+          <Link to="/">
             <h2>{"{ ...f }"}</h2>
-          </a>
+          </Link>
         </div>
       </div>
 
       <div className="menu">
         <nav className="nav-bar">
           <div className={`nav-list nav-${menuDisplay}`}>
-            <p className="nav-item">
+            <p className="nav-item resume">
               <a href="https://bit.ly/3ux0q3Y" target="_blank" rel="noreferrer">
                 Resume
               </a>
             </p>
-            <p className="nav-item">Portfolio</p>
+            <p className="nav-item portfolio">
+              <Link to="/portfolio">Portfolio</Link>
+            </p>
             <p className="nav-item">Contact</p>
           </div>
           <div

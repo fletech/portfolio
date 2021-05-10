@@ -1,5 +1,5 @@
 header {
-  padding: 0 5rem;
+  padding: 0 10rem;
   width: 100%;
   min-height: 5rem;
   height: 10vh;
@@ -30,7 +30,6 @@ header {
       h2 {
         padding-top: 5px;
         font-weight: 600;
-        font-size: 30px;
       }
     }
   }
@@ -55,9 +54,16 @@ header {
           margin-left: 2rem;
           display: flex;
           align-items: center;
-          padding-top: 5px;
+          padding: 5px;
           text-align: right;
           list-style: none;
+        }
+        p.resume {
+          border-radius: 4px;
+          animation: background-change 5s infinite;
+          a {
+            animation: color-change 5s infinite;
+          }
         }
       }
       div.nav-false {
@@ -105,6 +111,33 @@ header {
         }
       }
     }
+  }
+}
+
+@keyframes background-change {
+  0% {
+    background-color: white;
+  }
+  50% {
+    background-color: orange;
+  }
+  100% {
+    background-color: white;
+  }
+}
+
+@keyframes color-change {
+  0% {
+    color: #474747;
+  }
+  40% {
+    color: white;
+  }
+  60% {
+    color: white;
+  }
+  100% {
+    color: #474747;
   }
 }
 

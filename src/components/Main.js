@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import { MainStyled } from "../styles/styledComponents";
 import homeImage from "../images/Facundo.jpg";
 
 const Main = () => {
@@ -11,7 +11,12 @@ const Main = () => {
 
       <div className="about-me">
         <div className="description">
-          <h2>Currently coding to deliver something great..</h2>
+          <h3>
+            Node.js Full stack focusing on front-end with React and its
+            environment.{" "}
+          </h3>
+          <p></p>
+          <h4>Currently coding to deliver something great.</h4>
         </div>
 
         <div className="social-network">
@@ -38,15 +43,5 @@ const Main = () => {
     </MainStyled>
   );
 };
-
-const MainStyled = styled.main`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  object-fit: cover;
-  overflow: hidden;
-  z-index: 1;
-`;
 
 export default Main;
