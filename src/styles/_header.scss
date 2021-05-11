@@ -65,6 +65,10 @@ header {
             animation: color-change 5s infinite;
           }
         }
+        p.contact {
+          cursor: not-allowed;
+          color: #c7c6c6;
+        }
       }
       div.nav-false {
         transition: all 0.5s ease;

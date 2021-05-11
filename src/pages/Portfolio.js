@@ -3,6 +3,7 @@ import { init } from "ityped";
 import styled from "styled-components";
 
 import { MainStyled } from "../styles/styledComponents";
+import { Router } from "react-router";
 
 const Portfolio = () => {
   useEffect(() => {
@@ -11,7 +12,7 @@ const Portfolio = () => {
     init(importStyledRef, {
       showCursor: false,
       loop: false,
-      strings: [`import { MainStyled } from "../styles/styledComponents;"`],
+      strings: [`import { MainStyled } from "../styles/styledComponents";`],
     });
     init(canvaRef, {
       showCursor: false,
@@ -22,6 +23,9 @@ const Portfolio = () => {
   }, []);
   return (
     <MainStyled>
+      <div className="message-current">
+        <h3>Under coding...</h3>
+      </div>
       <CanvaStyled className="canva">
         <div className="circles">
           <div className="red"></div>
@@ -60,6 +64,7 @@ const CanvaStyled = styled.div`
   z-index: 2;
   transform: translateY(-15%);
   box-shadow: 2px 2px 8px #838383, -2px -2px 8px #838383;
+
   .circles {
     position: absolute;
     display: flex;
@@ -98,6 +103,14 @@ const CanvaStyled = styled.div`
   }
   .margin-left-2x {
     margin-left: 4rem;
+  }
+
+  @media (max-width: 600px) {
+    border-top: solid 1.6rem #7c7b7b;
+
+    .circles {
+      top: -14px;
+    }
   }
 `;
 

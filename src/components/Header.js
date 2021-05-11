@@ -29,7 +29,7 @@ const Header = ({ menuDisplay, menuDisplayHandler }) => {
             <p className="nav-item portfolio">
               <Link to="/portfolio">Portfolio</Link>
             </p>
-            <p className="nav-item">Contact</p>
+            <p className="nav-item contact">Contact</p>
           </div>
           <div
             className="toggle-menu"
