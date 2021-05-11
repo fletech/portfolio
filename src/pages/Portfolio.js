@@ -23,9 +23,9 @@ const Portfolio = () => {
   }, []);
   return (
     <MainStyled>
-      <div className="message-current">
+      <DivStyled className="message-current">
         <h3>Under coding...</h3>
-      </div>
+      </DivStyled>
       <CanvaStyled className="canva">
         <div className="circles">
           <div className="red"></div>
@@ -107,11 +107,14 @@ const CanvaStyled = styled.div`
 
   @media (max-width: 600px) {
     border-top: solid 1.6rem #7c7b7b;
+    transform: translateY(0%);
 
     .circles {
       top: -14px;
     }
   }
 `;
-
+const DivStyled = styled.div`
+  margin-bottom: 3rem;
+`;
 export default Portfolio;
