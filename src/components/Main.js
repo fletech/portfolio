@@ -26,7 +26,7 @@ const Main = () => {
               target="_blank"
               rel="noreferrer"
             >
-              <i class="fab fa-github"></i>
+              <i className="fab fa-github"></i>
             </a>
           </div>
           <div className="button-container">
@@ -35,7 +35,7 @@ const Main = () => {
               target="_blank"
               rel="noreferrer"
             >
-              <i class="fab fa-linkedin-in"></i>
+              <i className="fab fa-linkedin-in"></i>
             </a>
           </div>
         </div>

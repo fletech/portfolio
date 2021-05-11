@@ -23,11 +23,16 @@ const Portfolio = () => {
   return (
     <MainStyled>
       <CanvaStyled className="canva">
+        <div className="circles">
+          <div className="red"></div>
+          <div className="yellow"></div>
+          <div className="green"></div>
+        </div>
         <div className="function">
-          <p>{`import * from "react";`}</p>
+          <p>{`import React, { useState } from "react";`}</p>
           <p className="import-styled"></p>
           <br />
-          <p>{`const Portfolio = () => {`}</p>
+          <p>{`const Portfolio = ( ) => {`}</p>
           <p className="margin-left">{`return(`}</p>
           <p className="main-styled margin-left-2x"></p>
           <p className="margin-left">{`)`}</p>
@@ -41,10 +46,12 @@ const Portfolio = () => {
 };
 
 const CanvaStyled = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   align-items: center;
+  border-top: solid 1.4rem #7c7b7b;
   width: 40%;
   height: 40vh;
   background-color: #393939;
@@ -52,22 +59,45 @@ const CanvaStyled = styled.div`
   min-width: 300px;
   z-index: 2;
   transform: translateY(-15%);
-  box-shadow: 2px 2px 8px #393939, -2px -2px 8px #393939;
-  p {
-    color: orange !important;
-    text-shadow: 1px 1px 8px #7c7b7b;
-  }
-  .margin-left {
-    margin-left: 2rem;
-  }
-  .margin-left-2x {
-    margin-left: 4rem;
+  box-shadow: 2px 2px 8px #838383, -2px -2px 8px #838383;
+  .circles {
+    position: absolute;
+    display: flex;
+    top: -16px;
+    left: 10px;
+    div {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      margin: 0px 4px;
+      background-color: #fff;
+    }
+    .red {
+      background-color: #fa4e4e;
+    }
+    .yellow {
+      background-color: #fadf4a;
+    }
+    .green {
+      background-color: #65bb50;
+    }
   }
   .function {
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+  }
+  p {
+    color: orange !important;
+    text-shadow: 1px 1px 8px #7c7b7b;
+  }
+
+  .margin-left {
+    margin-left: 2rem;
+  }
+  .margin-left-2x {
+    margin-left: 4rem;
   }
 `;
 
