@@ -3,7 +3,6 @@ import { init } from "ityped";
 import styled from "styled-components";
 
 import { MainStyled } from "../styles/styledComponents";
-import { Router } from "react-router";
 
 const Portfolio = () => {
   useEffect(() => {

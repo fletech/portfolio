@@ -22,14 +22,16 @@ const Header = ({ menuDisplay, menuDisplayHandler }) => {
         <nav className="nav-bar">
           <div className={`nav-list nav-${menuDisplay}`}>
             <p className="nav-item resume">
-              <a href="https://bit.ly/3ux0q3Y" target="_blank" rel="noreferrer">
+              <a href="https://bit.ly/3bgrMDS" target="_blank" rel="noreferrer">
                 Resume
               </a>
             </p>
             <p className="nav-item portfolio">
               <Link to="/portfolio">Portfolio</Link>
             </p>
-            <p className="nav-item contact">Contact</p>
+            <p className="nav-item contact">
+              <Link to="/contact">Contact</Link>
+            </p>
           </div>
           <div
             className="toggle-menu"

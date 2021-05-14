@@ -59,10 +59,11 @@ header {
           list-style: none;
         }
         p.resume {
-          border-radius: 4px;
+          border-radius: 30px;
           animation: background-change 5s infinite;
           a {
             animation: color-change 5s infinite;
+            padding: 0px 10px;
           }
         }
         p.contact {

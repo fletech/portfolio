@@ -1,6 +1,7 @@
 import React from "react";
 import { MainStyled } from "../styles/styledComponents";
 import homeImage from "../images/Facundo.jpg";
+import { Link } from "react-router-dom";
 
 const Main = () => {
   return (
@@ -8,6 +9,7 @@ const Main = () => {
       <div className="image-container">
         <img src={homeImage} alt="" />
       </div>
+      <h2>Facundo Garcia</h2>
 
       <div className="about-me">
         <div className="description">
@@ -37,6 +39,11 @@ const Main = () => {
             >
               <i className="fab fa-linkedin-in"></i>
             </a>
+          </div>
+          <div className="button-container">
+            <Link to="/contact">
+              <i className="fas fa-envelope"></i>
+            </Link>
           </div>
         </div>
       </div>
