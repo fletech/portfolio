@@ -1,11 +1,11 @@
 header {
-  background-color: #474747;
-  padding: 0 5rem;
+  padding: 0 10rem;
   width: 100%;
   min-height: 5rem;
   height: 10vh;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   position: relative;
   .logo-container {
     width: 12rem;
@@ -23,48 +23,70 @@ header {
       }
     }
     .logo-name {
-      width: 8rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      h2 {
+        padding-top: 5px;
+        font-weight: 600;
+      }
     }
   }
   div.menu {
-    height: 50px;
-    flex: 1;
     display: flex;
     align-items: center;
     justify-content: flex-end;
     .nav-bar {
+      height: 40px;
       display: flex;
       align-items: center;
-      justify-content: flex-end;
-      ul.nav-list {
-        width: 100%;
+      div.nav-list {
+        height: 100%;
         display: flex;
-        justify-content: space-around;
-        transition: opacity 0.5s ease;
+        align-items: baseline;
+        align-items: center;
+        transition: all 0.5s ease;
         margin-right: 20px;
-        a {
+
+        p {
+          height: 100%;
           margin-left: 2rem;
-          li {
-            text-align: right;
-            list-style: none;
+          display: flex;
+          align-items: center;
+          padding: 5px;
+          text-align: right;
+          list-style: none;
+        }
+        p.resume {
+          border-radius: 30px;
+          animation: background-change 5s infinite;
+          a {
+            animation: color-change 5s infinite;
+            padding: 0px 10px;
           }
         }
+        p.contact {
+          cursor: not-allowed;
+          color: #c7c6c6;
+        }
       }
-      ul.nav-false {
+      div.nav-false {
         transition: all 0.5s ease;
         pointer-events: none;
         opacity: 0;
         position: absolute;
         left: -1000%;
       }
-      ul.nav-true {
+      div.nav-true {
         opacity: 1;
+        align-items: center;
       }
 
       .toggle-menu {
         border-radius: 30px;
-        width: 40px;
-        height: 40px;
+        width: 30px;
+        height: 30px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -72,21 +94,55 @@ header {
         background: transparent;
         cursor: pointer;
         &:hover {
-          background-color: dodgerblue;
-        }
-        .icon-container {
-          width: 50px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          transition: all 1s ease;
-          background: transparent;
-          svg {
-            background: transparent;
+          background-color: orange;
+          .icon-container i {
+            color: white !important;
+            transition: color 0.5s ease;
           }
         }
       }
+      .icon-container {
+        width: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.5s ease;
+        background: transparent;
+        i {
+          transition: color 1s ease;
+        }
+        svg {
+          background: transparent;
+        }
+      }
     }
+  }
+}
+
+@keyframes background-change {
+  0% {
+    background-color: white;
+  }
+  50% {
+    background-color: orange;
+  }
+  100% {
+    background-color: white;
+  }
+}
+
+@keyframes color-change {
+  0% {
+    color: #474747;
+  }
+  40% {
+    color: white;
+  }
+  60% {
+    color: white;
+  }
+  100% {
+    color: #474747;
   }
 }
 

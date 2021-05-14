@@ -1,8 +1,38 @@
 footer {
-  background-color: #474747;
+  background-color: #323232;
   width: 100vw;
-  height: 10vh;
+  height: 5vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  div p {
+    color: white !important;
+    a i {
+      color: orange;
+    }
+    a i.fa-react {
+      animation: spin 5s infinite;
+    }
+    span {
+      color: orange;
+    }
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(1500deg);
+  }
+  50% {
+    transform: rotate(90deg);
+  }
+  75% {
+    transform: rotate(600deg);
+  }
+  100% {
+    transform: rotate(180deg);
+  }
 }
