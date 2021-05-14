@@ -70,7 +70,7 @@ const App = () => {
         <Route path="/portfolio">
           <Portfolio />
         </Route>
-        <Route path="/contact">
+        <Route path="/contact" exact>
           <Contact
             subject={subject}
             setSubject={setSubject}
