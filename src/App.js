@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Route, Switch, useLocation } from "react-router-dom";
 
 //Import Style
@@ -25,6 +25,10 @@ const App = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [modalClassName, setModalClassName] = useState("");
+
+  const [error, setError] = useState(null);
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [items, setItems] = useState([]);
 
   //handlers
 
@@ -56,6 +60,26 @@ const App = () => {
     }
   };
 
+  useEffect(() => {
+    fetch("https://fletapi.herokuapp.com/facundo/api/posts")
+      .then((res) => res.json())
+      .then(
+        (result) => {
+          console.log(result);
+          setIsLoaded(true);
+          setItems(result);
+        },
+        // Nota: es importante manejar errores aquí y no en
+        // un bloque catch() para que no interceptemos errores
+        // de errores reales en los componentes.
+        (error) => {
+          setIsLoaded(true);
+          setError(error);
+          console.log(error);
+        }
+      );
+  }, []);
+
   return (
     <div className="App">
       <Header
@@ -85,9 +109,9 @@ const App = () => {
             onChangeHandler={onChangeHandler}
           />
         </Route>
-        <Route path="/blog">
-          <Blog />
-        </Route>
+        {/* <Route path="/blog">
+          <Blog isLoaded={isLoaded} error={error} items={items} />
+        </Route> */}
       </Switch>
 
       <Footer />

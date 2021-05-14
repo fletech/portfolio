@@ -1,30 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import { MainStyled } from "../styles/styledComponents";
 
-const Blog = () => {
-  const [error, setError] = useState(null);
-  const [isLoaded, setIsLoaded] = useState(false);
-  const [items, setItems] = useState([]);
-  useEffect(() => {
-    fetch("https://fletapi.herokuapp.com/facundo/api/posts")
-      .then((res) => res.json())
-      .then(
-        (result) => {
-          console.log(result);
-          setIsLoaded(true);
-          setItems(result);
-        },
-        // Nota: es importante manejar errores aquí y no en
-        // un bloque catch() para que no interceptemos errores
-        // de errores reales en los componentes.
-        (error) => {
-          setIsLoaded(true);
-          setError(error);
-          console.log(error);
-        }
-      );
-  }, []);
+const Blog = ({ error, isLoaded, items }) => {
   return (
     <MainPostsStyled>
       {error && <p>{error}</p>}
@@ -42,9 +20,12 @@ const Blog = () => {
 };
 const MainPostsStyled = styled(MainStyled)`
   flex-direction: row;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: center;
 `;
 
 const PostStyled = styled.div`
-  width: 100%;
+  width: 300px;
 `;
 export default Blog;
