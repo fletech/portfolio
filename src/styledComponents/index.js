@@ -4,8 +4,9 @@ export const MainStyled = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   width: 100%;
-  height: 85vh;
+  min-height: 85vh;
   overflow: hidden;
   z-index: 1;
 `;
@@ -21,7 +22,7 @@ export const ModalStyled = styled.div`
   background-color: rgba(255, 255, 255, 0.473);
   flex-direction: column;
   align-items: center;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   overflow: hidden;
   z-index: 100;

@@ -1,11 +1,10 @@
-import React from "react";
-import { MainStyled } from "../styles/styledComponents";
+import styled from "styled-components";
 import homeImage from "../images/Facundo.jpg";
 import { Link } from "react-router-dom";
 
 const Main = () => {
   return (
-    <MainStyled>
+    <SectionStyled>
       <div className="image-container">
         <img src={homeImage} alt="" />
       </div>
@@ -47,8 +46,98 @@ const Main = () => {
           </div>
         </div>
       </div>
-    </MainStyled>
+    </SectionStyled>
   );
 };
+const SectionStyled = styled.main`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  min-height: 85vh;
+  overflow: hidden;
+  z-index: 1;
+  justify-content: space-evenly;
 
+  .image-container {
+    display: flex;
+    align-items: center;
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+    object-fit: cover;
+    border-radius: 50%;
+
+    img {
+      width: 100%;
+      transform: translateY(10%);
+    }
+  }
+
+  .about-me {
+    padding: 0.5rem 0rem;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border-top: solid 0.1rem #e3e3e3;
+    .description {
+      margin-bottom: 2rem;
+      max-width: 400px;
+      h3 {
+        color: #474747;
+      }
+      h4 {
+        font-weight: 200;
+      }
+    }
+
+    .social-network {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      width: 200px;
+      .button-container {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background: orange;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        &:hover i {
+          color: white;
+        }
+        a {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+          height: 100%;
+        }
+        i {
+          color: #474747;
+          font-size: 16px;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 600px) {
+    main {
+      height: 75vh;
+      justify-content: center;
+    }
+    .image-container {
+      width: 200px;
+      height: 200px;
+    }
+    .about-me {
+      padding: 0.5rem 1rem;
+    }
+  }
+`;
 export default Main;

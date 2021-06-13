@@ -1,16 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Route, Switch, useLocation } from "react-router-dom";
 
-//Import Style
-import "./styles/app.scss";
-//Components
-import Footer from "./components/Footer";
-import Header from "./components/Header";
-import Main from "./components/Main";
 //Pages
 import Portfolio from "./pages/Portfolio";
 import Contact from "./pages/Contact";
-import Blog from "./pages/Blog";
+import Layout from "./components/Layout";
+import Home from "./pages/Home";
+import { GlobalStyle } from "./components/GlobalStyles";
 
 const App = () => {
   //Location
@@ -26,9 +22,9 @@ const App = () => {
   const [email, setEmail] = useState("");
   const [modalClassName, setModalClassName] = useState("");
 
-  const [error, setError] = useState(null);
-  const [isLoaded, setIsLoaded] = useState(false);
-  const [items, setItems] = useState([]);
+  // const [error, setError] = useState(null);
+  // const [isLoaded, setIsLoaded] = useState(false);
+  // const [items, setItems] = useState([]);
 
   //handlers
 
@@ -60,61 +56,57 @@ const App = () => {
     }
   };
 
-  useEffect(() => {
-    fetch("https://fletapi.herokuapp.com/facundo/api/posts")
-      .then((res) => res.json())
-      .then(
-        (result) => {
-          console.log(result);
-          setIsLoaded(true);
-          setItems(result);
-        },
-        // Nota: es importante manejar errores aquí y no en
-        // un bloque catch() para que no interceptemos errores
-        // de errores reales en los componentes.
-        (error) => {
-          setIsLoaded(true);
-          setError(error);
-          console.log(error);
-        }
-      );
-  }, []);
+  // useEffect(() => {
+  //   fetch("https://fletapi.herokuapp.com/facundo/api/posts")
+  //     .then((res) => res.json())
+  //     .then(
+  //       (result) => {
+  //         console.log(result);
+  //         setIsLoaded(true);
+  //         setItems(result);
+  //       },
+  //       // Nota: es importante manejar errores aquí y no en
+  //       // un bloque catch() para que no interceptemos errores
+  //       // de errores reales en los componentes.
+  //       (error) => {
+  //         setIsLoaded(true);
+  //         setError(error);
+  //         console.log(error);
+  //       }
+  //     );
+  // }, []);
 
   return (
     <div className="App">
-      <Header
-        menuDisplay={menuDisplay}
-        setMenuDisplay={setMenuDisplay}
-        menuDisplayHandler={menuDisplayHandler}
-      />
-      <Switch location={location} key={location.pathname}>
-        <Route path="/" exact>
-          <Main />
-        </Route>
-        <Route path="/portfolio">
-          <Portfolio />
-        </Route>
-        <Route path="/contact" exact>
-          <Contact
-            subject={subject}
-            setSubject={setSubject}
-            message={message}
-            setMessage={setMessage}
-            name={name}
-            setName={setName}
-            email={email}
-            setEmail={setEmail}
-            modalClassName={modalClassName}
-            setModalClassName={setModalClassName}
-            onChangeHandler={onChangeHandler}
-          />
-        </Route>
-        {/* <Route path="/blog">
+      <GlobalStyle />
+      <Layout menuDisplay={menuDisplay} menuDisplayHandler={menuDisplayHandler}>
+        <Switch location={location} key={location.pathname}>
+          <Route path="/" exact>
+            <Home />
+          </Route>
+          <Route path="/portfolio">
+            <Portfolio />
+          </Route>
+          <Route path="/contact" exact>
+            <Contact
+              subject={subject}
+              setSubject={setSubject}
+              message={message}
+              setMessage={setMessage}
+              name={name}
+              setName={setName}
+              email={email}
+              setEmail={setEmail}
+              modalClassName={modalClassName}
+              setModalClassName={setModalClassName}
+              onChangeHandler={onChangeHandler}
+            />
+          </Route>
+          {/* <Route path="/blog">
           <Blog isLoaded={isLoaded} error={error} items={items} />
         </Route> */}
-      </Switch>
-
-      <Footer />
+        </Switch>
+      </Layout>
     </div>
   );
 };

@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { init } from "ityped";
 import styled from "styled-components";
 
-import { MainStyled } from "../styles/styledComponents";
+import { MainStyled } from "../styledComponents";
 
 const Portfolio = () => {
   useEffect(() => {
@@ -11,7 +11,7 @@ const Portfolio = () => {
     init(importStyledRef, {
       showCursor: false,
       loop: false,
-      strings: [`import { MainStyled } from "../styles/styledComponents";`],
+      strings: [`import { MainStyled } from "../styledComponents";`],
     });
     init(canvaRef, {
       showCursor: false,
@@ -56,7 +56,7 @@ const CanvaStyled = styled.div`
   align-items: center;
   border-top: solid 1.4rem #7c7b7b;
   width: 40%;
-  height: 40vh;
+  height: auto;
   background-color: #393939;
   padding: 2rem;
   min-width: 300px;

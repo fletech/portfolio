@@ -5,7 +5,7 @@ import {
   MainStyled,
   ModalStyled,
   MessageModalStyled,
-} from "../styles/styledComponents";
+} from "../styledComponents";
 
 const Contact = ({
   subject,

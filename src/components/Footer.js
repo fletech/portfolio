@@ -1,8 +1,8 @@
-import React from "react";
+import styled from "styled-components";
 
 const Footer = () => {
   return (
-    <footer>
+    <FooterStyled>
       <div className="author-info">
         <p>
           © website built on React{" "}
@@ -23,8 +23,47 @@ const Footer = () => {
           </a>
         </p>
       </div>
-    </footer>
+    </FooterStyled>
   );
 };
+
+const FooterStyled = styled.footer`
+  background-color: #323232;
+  width: 100%;
+  height: 5vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  div p {
+    color: white !important;
+    a i {
+      color: orange;
+    }
+    a i.fa-react {
+      animation: spin 5s infinite;
+    }
+    span {
+      color: orange;
+    }
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    25% {
+      transform: rotate(1500deg);
+    }
+    50% {
+      transform: rotate(90deg);
+    }
+    75% {
+      transform: rotate(600deg);
+    }
+    100% {
+      transform: rotate(180deg);
+    }
+  }
+`;
 
 export default Footer;
