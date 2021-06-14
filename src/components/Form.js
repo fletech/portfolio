@@ -26,6 +26,9 @@ const FormStyled = styled.form`
       color: #474747;
     }
     input {
+      @media (max-width: 768px) {
+        font-size: 16px;
+      }
       border: none;
       color: #474747;
       width: 100%;

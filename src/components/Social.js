@@ -32,10 +32,11 @@ const SocialStyled = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-around;
-    width: 200px;
+    width: auto;
     .button-container {
       width: 30px;
       height: 30px;
+      margin: 0 1rem;
       border-radius: 50%;
       background: orange;
       display: flex;

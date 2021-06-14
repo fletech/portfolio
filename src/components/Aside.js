@@ -70,6 +70,7 @@ const AsideStyled = styled.aside`
 
   &.aside-open {
     right: 0;
+    backdrop-filter: blur(2px);
     div.blur {
       width: 40%;
       height: 100%;
