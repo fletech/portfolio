@@ -42,6 +42,9 @@ const FormStyled = styled.form`
       }
     }
     textarea#message {
+      @media (max-width: 768px) {
+        font-size: 16px;
+      }
       height: 4rem;
       border: none;
       color: #474747;
