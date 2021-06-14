@@ -4,7 +4,7 @@ export const MainStyled = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   width: 100%;
   min-height: 85vh;
   overflow: hidden;
@@ -19,7 +19,7 @@ export const ModalStyled = styled.div`
   align-items: center;
   justify-content: center;
   opacity: 0;
-  background-color: rgba(255, 255, 255, 0.473);
+  background: transparent;
   flex-direction: column;
   align-items: center;
   width: 100%;
@@ -31,6 +31,7 @@ export const ModalStyled = styled.div`
   transition: opacity 0.2s ease-in-out;
   &.successed {
     opacity: 1;
+    backdrop-filter: blur(2px);
   }
 `;
 

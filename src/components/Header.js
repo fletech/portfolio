@@ -1,8 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { menuDisplayHandler } from "../utils";
+import Aside from "./Aside";
 
-const Header = ({ menuDisplay, menuDisplayHandler }) => {
+const Header = ({ menuDisplay, setMenuDisplay }) => {
   return (
     <HeaderStyled>
       <div className="logo-container">
@@ -21,7 +23,7 @@ const Header = ({ menuDisplay, menuDisplayHandler }) => {
 
       <div className="menu">
         <nav className="nav-bar">
-          <div className={`nav-list nav-${menuDisplay}`}>
+          <div className={`nav-list nav-true`}>
             <p className="nav-item resume">
               <a href="https://bit.ly/3bgrMDS" target="_blank" rel="noreferrer">
                 Resume
@@ -34,13 +36,15 @@ const Header = ({ menuDisplay, menuDisplayHandler }) => {
               <Link to="/contact">Contact</Link>
             </p>
           </div>
+
           <div
             className="toggle-menu"
-            onClick={() => menuDisplayHandler(menuDisplay)}
+            onClick={() => menuDisplayHandler(menuDisplay, setMenuDisplay)}
           >
             <div className="icon-container">
               {menuDisplay && <i className="fas fa-times"></i>}
-              {!menuDisplay && <i className="fas fa-ellipsis-v"></i>}
+
+              {!menuDisplay && <i className="fas fa-bars"></i>}
             </div>
           </div>
         </nav>
@@ -85,11 +89,13 @@ const HeaderStyled = styled.header`
   }
   div.menu {
     display: flex;
+
     align-items: center;
     justify-content: flex-end;
     .nav-bar {
       height: 40px;
       display: flex;
+
       align-items: center;
       div.nav-list {
         height: 100%;
@@ -97,7 +103,6 @@ const HeaderStyled = styled.header`
         align-items: baseline;
         align-items: center;
         transition: all 0.5s ease;
-        margin-right: 20px;
 
         p {
           height: 100%;
@@ -121,28 +126,29 @@ const HeaderStyled = styled.header`
           color: #c7c6c6;
         }
       }
-      div.nav-false {
-        transition: all 0.5s ease;
-        pointer-events: none;
-        opacity: 0;
-        position: absolute;
-        left: -1000%;
-      }
+
       div.nav-true {
         opacity: 1;
         align-items: center;
+        @media (max-width: 768px) {
+          display: none;
+        }
       }
 
       .toggle-menu {
-        border-radius: 30px;
-        width: 30px;
-        height: 30px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: all 1s ease;
-        background: transparent;
-        cursor: pointer;
+        display: none;
+        @media (max-width: 768px) {
+          border-radius: 30px;
+          width: 2.5rem;
+          height: 2.5rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: all 1s ease;
+          background: transparent;
+          cursor: pointer;
+        }
+
         &:hover {
           background-color: orange;
           .icon-container i {
@@ -152,14 +158,16 @@ const HeaderStyled = styled.header`
         }
       }
       .icon-container {
-        width: 50px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: all 0.5s ease;
+        width: 100%;
+        display: grid;
+        place-items: center;
+        transition: all 0.3s ease;
         background: transparent;
+        z-index: 200;
         i {
           transition: color 1s ease;
+          font-size: 1.5rem;
+          color: orange;
         }
         svg {
           background: transparent;
@@ -195,8 +203,8 @@ const HeaderStyled = styled.header`
     }
   }
 
-  @media screen and(max-width:768px) {
-    padding: 0 1rem;
+  @media (max-width: 768px) {
+    padding: 0 3rem;
   }
 `;
 

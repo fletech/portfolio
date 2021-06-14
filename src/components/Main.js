@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import homeImage from "../images/Facundo.jpg";
 import { Link } from "react-router-dom";
+import Social from "./Social";
 
 const Main = () => {
   return (
@@ -8,7 +9,8 @@ const Main = () => {
       <div className="image-container">
         <img src={homeImage} alt="" />
       </div>
-      <h2>Facundo Garcia</h2>
+      <h2>Hello 👋🏼, I'm Facundo Garcia</h2>
+      <h3></h3>
 
       <div className="about-me">
         <div className="description">
@@ -20,31 +22,7 @@ const Main = () => {
           <h4>Currently coding to deliver something great.</h4>
         </div>
 
-        <div className="social-network">
-          <div className="button-container">
-            <a
-              href="https://github.com/fletech"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <i className="fab fa-github"></i>
-            </a>
-          </div>
-          <div className="button-container">
-            <a
-              href="https://www.linkedin.com/in/facundo-garcia-ar/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <i className="fab fa-linkedin-in"></i>
-            </a>
-          </div>
-          <div className="button-container">
-            <Link to="/contact">
-              <i className="fas fa-envelope"></i>
-            </Link>
-          </div>
-        </div>
+        <Social />
       </div>
     </SectionStyled>
   );
@@ -75,8 +53,8 @@ const SectionStyled = styled.main`
   }
 
   .about-me {
-    padding: 0.5rem 0rem;
-    margin-top: 2rem;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -93,37 +71,6 @@ const SectionStyled = styled.main`
         font-weight: 200;
       }
     }
-
-    .social-network {
-      display: flex;
-      align-items: center;
-      justify-content: space-around;
-      width: 200px;
-      .button-container {
-        width: 30px;
-        height: 30px;
-        border-radius: 50%;
-        background: orange;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        overflow: hidden;
-        &:hover i {
-          color: white;
-        }
-        a {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          width: 100%;
-          height: 100%;
-        }
-        i {
-          color: #474747;
-          font-size: 16px;
-        }
-      }
-    }
   }
 
   @media (max-width: 600px) {
@@ -136,7 +83,7 @@ const SectionStyled = styled.main`
       height: 200px;
     }
     .about-me {
-      padding: 0.5rem 1rem;
+      padding: 1rem;
     }
   }
 `;

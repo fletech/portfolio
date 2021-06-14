@@ -7,13 +7,13 @@ import Contact from "./pages/Contact";
 import Layout from "./components/Layout";
 import Home from "./pages/Home";
 import { GlobalStyle } from "./components/GlobalStyles";
+import Aside from "./components/Aside";
 
 const App = () => {
   //Location
   const location = useLocation();
-
   //UseState
-  const [menuDisplay, setMenuDisplay] = useState(true);
+  const [menuDisplay, setMenuDisplay] = useState(false);
 
   //States
   const [subject, setSubject] = useState("");
@@ -27,10 +27,6 @@ const App = () => {
   // const [items, setItems] = useState([]);
 
   //handlers
-
-  const menuDisplayHandler = (menuDisplay) => {
-    !menuDisplay ? setMenuDisplay(true) : setMenuDisplay(false);
-  };
 
   const onChangeHandler = (e) => {
     switch (e.target.id) {
@@ -79,7 +75,7 @@ const App = () => {
   return (
     <div className="App">
       <GlobalStyle />
-      <Layout menuDisplay={menuDisplay} menuDisplayHandler={menuDisplayHandler}>
+      <Layout menuDisplay={menuDisplay} setMenuDisplay={setMenuDisplay}>
         <Switch location={location} key={location.pathname}>
           <Route path="/" exact>
             <Home />

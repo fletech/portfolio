@@ -55,7 +55,7 @@ const CanvaStyled = styled.div`
   align-items: flex-start;
   align-items: center;
   border-top: solid 1.4rem #7c7b7b;
-  width: 40%;
+  width: 50%;
   height: auto;
   background-color: #393939;
   padding: 2rem;
@@ -107,7 +107,7 @@ const CanvaStyled = styled.div`
   @media (max-width: 600px) {
     border-top: solid 1.6rem #7c7b7b;
     transform: translateY(0%);
-
+    width: 80%;
     .circles {
       top: -14px;
     }

@@ -1,13 +1,17 @@
 import Header from "./Header";
 import Footer from "./Footer";
+import Aside from "./Aside";
 
-const Layout = ({ menuDisplay, menuDisplayHandler, children }) => {
+const Layout = ({ menuDisplay, setMenuDisplay, children }) => {
   return (
     <>
-      <Header
+      <Header menuDisplay={menuDisplay} setMenuDisplay={setMenuDisplay} />
+      <Aside
+        className={menuDisplay ? "aside-open" : "aside-closed"}
         menuDisplay={menuDisplay}
-        menuDisplayHandler={menuDisplayHandler}
+        setMenuDisplay={setMenuDisplay}
       />
+
       {children}
       <Footer />
     </>
