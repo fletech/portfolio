@@ -86,7 +86,6 @@ const AsideStyled = styled.aside`
       display: grid;
       place-items: center;
       div.menu-list {
-        padding: 1rem;
         width: 100%;
         height: 80%;
         display: flex;
