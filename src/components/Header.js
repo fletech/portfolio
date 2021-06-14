@@ -25,7 +25,8 @@ const Header = ({ menuDisplay, setMenuDisplay }) => {
         <nav className="nav-bar">
           <div className={`nav-list nav-true`}>
             <p className="nav-item resume">
-              <a href="https://bit.ly/3bgrMDS" target="_blank" rel="noreferrer">
+              <a href="/resume.pdf" target="_blank" rel="noreferrer">
+                {/* <a href="https://bit.ly/3bgrMDS" target="_blank" rel="noreferrer"> */}
                 Resume
               </a>
             </p>

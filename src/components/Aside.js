@@ -1,10 +1,11 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import styled from "styled-components";
 import { menuDisplayHandler } from "../utils";
 import Social from "./Social";
 
 const Aside = ({ className, menuDisplay, setMenuDisplay }) => {
+  const location = useLocation();
   return (
     <AsideStyled className={className}>
       <div
@@ -14,17 +15,20 @@ const Aside = ({ className, menuDisplay, setMenuDisplay }) => {
       <div className="menu">
         <div className="menu-list">
           <nav className="menu-options">
-            <p className="nav-item resume">
-              <i className="far fa-file-pdf"></i>
-              <a
-                href="https://bit.ly/3bgrMDS"
-                target="_blank"
-                rel="noreferrer"
-                onClick={() => menuDisplayHandler(menuDisplay, setMenuDisplay)}
-              >
-                Resume
-              </a>
-            </p>
+            {location.pathname !== "/" && (
+              <p className="nav-item portfolio">
+                <i className="fas fa-home"></i>
+                <Link
+                  to="/"
+                  onClick={() =>
+                    menuDisplayHandler(menuDisplay, setMenuDisplay)
+                  }
+                >
+                  Home{" "}
+                </Link>
+              </p>
+            )}
+
             <p className="nav-item portfolio">
               <i className="fas fa-briefcase"></i>
               <Link
@@ -42,6 +46,17 @@ const Aside = ({ className, menuDisplay, setMenuDisplay }) => {
               >
                 Get in touch{" "}
               </Link>
+            </p>
+            <p className="nav-item resume">
+              <i className="far fa-file-pdf"></i>
+              <a
+                href="/resume.pdf"
+                target="_blank"
+                rel="noreferrer"
+                onClick={() => menuDisplayHandler(menuDisplay, setMenuDisplay)}
+              >
+                Resume
+              </a>
             </p>
           </nav>
           <Social />
