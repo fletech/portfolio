@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import homeImage from "../images/Facundo.jpg";
-import { Link } from "react-router-dom";
 import Social from "./Social";
 
 const Main = () => {
@@ -10,7 +9,6 @@ const Main = () => {
         <img src={homeImage} alt="" />
       </div>
       <h2>Hello 👋🏼, I'm Facundo Garcia</h2>
-      <h3></h3>
 
       <div className="about-me">
         <div className="description">

@@ -3,11 +3,11 @@ import { Route, Switch, useLocation } from "react-router-dom";
 
 //Pages
 import Portfolio from "./pages/Portfolio";
+import Admin from "./pages/Admin";
 import Contact from "./pages/Contact";
 import Layout from "./components/Layout";
 import Home from "./pages/Home";
 import { GlobalStyle } from "./components/GlobalStyles";
-import Aside from "./components/Aside";
 
 const App = () => {
   //Location
@@ -79,6 +79,9 @@ const App = () => {
         <Switch location={location} key={location.pathname}>
           <Route path="/" exact>
             <Home />
+          </Route>
+          <Route path="/admin">
+            <Admin />
           </Route>
           <Route path="/portfolio">
             <Portfolio />

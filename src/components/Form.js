@@ -68,11 +68,13 @@ const FormStyled = styled.form`
     background-color: #dbdbdb;
     color: #474747;
     cursor: not-allowed;
+    overflow: hidden;
   }
   button.active {
     background-color: orange;
     color: white;
     cursor: pointer;
+    overflow: hidden;
   }
 `;
 export default Form;

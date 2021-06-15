@@ -6,7 +6,7 @@ export const MainStyled = styled.main`
   align-items: center;
   justify-content: space-evenly;
   width: 100%;
-  min-height: 85vh;
+  height: 85vh;
   overflow: hidden;
   z-index: 1;
 `;

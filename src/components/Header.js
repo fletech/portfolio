@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { menuDisplayHandler } from "../utils";
-import Aside from "./Aside";
 
 const Header = ({ menuDisplay, setMenuDisplay }) => {
   return (

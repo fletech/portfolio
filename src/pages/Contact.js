@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Form from "../components/Form";
+
+import styled from "styled-components";
 import {
   MainStyled,
   ModalStyled,
@@ -23,6 +25,7 @@ const Contact = ({
   const [buttonClassName, setButtonClassName] = useState("");
 
   const [submitted, setSubmitted] = useState(false);
+  const [posted, setPosting] = useState(false);
   //handlers
 
   const buttonHandler = (e) => {
@@ -35,6 +38,7 @@ const Contact = ({
     if (subject !== "" && message !== "" && name !== "" && email !== "") {
       setButtonClassName("active");
       if (submitted) {
+        setPosting(true);
         const body = {
           subject: subject,
           message: message,
@@ -51,6 +55,8 @@ const Contact = ({
             setEmail("");
             setButtonClassName("");
             setModalClassName("successed");
+            setPosting(false);
+
             setTimeout(() => {
               setSubmitted(false);
               setModalClassName("");
@@ -134,7 +140,14 @@ const Contact = ({
           onClick={buttonHandler}
           type="submit"
         >
-          Send
+          {posted ? (
+            <SpinnerStyled className="spinner-container">
+              <div className="spinner"></div>
+              <small>Sending...</small>
+            </SpinnerStyled>
+          ) : (
+            "Send"
+          )}
         </button>
         <ModalStyled className={modalClassName} />
         <MessageModalStyled className={modalClassName}>
@@ -144,5 +157,32 @@ const Contact = ({
     </MainStyled>
   );
 };
+const SpinnerStyled = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  div.spinner {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    border-left: 1px solid orange;
+    animation: spin 1s linear infinite;
+  }
+  small {
+    color: white;
+  }
+`;
 
 export default Contact;

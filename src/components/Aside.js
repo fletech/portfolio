@@ -39,7 +39,7 @@ const Aside = ({ className, menuDisplay, setMenuDisplay }) => {
               </Link>
             </p>
             <p className="nav-item contact">
-              <i class="far fa-comment-dots"></i>
+              <i className="far fa-comment-dots"></i>
               <Link
                 to="/contact"
                 onClick={() => menuDisplayHandler(menuDisplay, setMenuDisplay)}
