@@ -14,7 +14,7 @@ export const GlobalStyle = createGlobalStyle`
 //font-family: 'Concert One', monospace;
 font-family: "Noto Sans KR", sans-serif;
   font-weight: 400;
-  transition: all 0.2s ease-in-out;
+  //transition: all 0.2s ease-in-out;
 }
 
 html {

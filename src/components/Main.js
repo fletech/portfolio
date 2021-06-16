@@ -8,7 +8,12 @@ const Main = () => {
       <div className="image-container">
         <img src={homeImage} alt="" />
       </div>
-      <h2>Hello 👋🏼, I'm Facundo Garcia</h2>
+      <div className="heading">
+        <div className="greeting">
+          <span>👋🏼</span>
+        </div>
+        <h2>Hello, I'm Facundo Garcia</h2>
+      </div>
 
       <div className="about-me">
         <div className="description">
@@ -49,7 +54,42 @@ const SectionStyled = styled.main`
       transform: translateY(10%);
     }
   }
+  div.heading {
+    display: flex;
+    align-items: center;
 
+    div.greeting {
+      display: flex;
+      width: auto;
+      margin-right: 1rem;
+      span {
+        font-size: 2rem;
+      }
+      p {
+        animation: shake 0.5s linear infinite;
+        font-size: 2rem;
+        transform: rotate(0deg);
+      }
+    }
+    h2 {
+    }
+  }
+
+  @keyframes shake {
+    0% {
+      transform: rotate(0deg);
+    }
+    33% {
+      transform: rotate(30deg);
+    }
+    67% {
+      transform: rotate(-20deg);
+    }
+
+    100% {
+      transform: rotate(0deg);
+    }
+  }
   .about-me {
     padding: 1rem;
     margin-bottom: 1.5rem;

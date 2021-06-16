@@ -37,6 +37,7 @@ const Contact = ({
   useEffect(() => {
     if (subject !== "" && message !== "" && name !== "" && email !== "") {
       setButtonClassName("active");
+
       if (submitted) {
         setPosting(true);
         const body = {
@@ -49,13 +50,13 @@ const Contact = ({
           .post("https://fletapi.herokuapp.com/facundo/api/new-message", body)
           .then((response) => {
             console.log(response.data);
+            setPosting(false);
             setSubject("");
             setMessage("");
             setName("");
             setEmail("");
             setButtonClassName("");
             setModalClassName("successed");
-            setPosting(false);
 
             setTimeout(() => {
               setSubmitted(false);
@@ -77,6 +78,7 @@ const Contact = ({
     setName,
     setEmail,
     submitted,
+    posted,
     setModalClassName,
   ]);
 
@@ -177,8 +179,8 @@ const SpinnerStyled = styled.div`
     height: 1rem;
     border-radius: 50%;
     border: 2px solid #fff;
-    border-left: 1px solid orange;
-    animation: spin 1s linear infinite;
+    border-left: 2px solid orange;
+    animation: spin linear 10s infinite;
   }
   small {
     color: white;

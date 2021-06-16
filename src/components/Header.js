@@ -122,7 +122,7 @@ const HeaderStyled = styled.header`
           }
         }
         p.contact {
-          cursor: not-allowed;
+          cursor: pointer;
           color: #c7c6c6;
         }
       }
