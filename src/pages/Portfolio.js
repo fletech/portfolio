@@ -3,8 +3,28 @@ import { init } from "ityped";
 import styled from "styled-components";
 
 import { MainStyled } from "../styledComponents";
+import axios from "axios";
+import { useState } from "react";
 
 const Portfolio = () => {
+  //Hooks
+  const [repos, setRepos] = useState([]);
+  //Axios to GITHUB
+
+  const getReposAxios = () => {
+    axios
+      .get("https://api.github.com/users/fletech/repos")
+      .then((response) => {
+        let filteredRepos = response.data.filter(
+          (repo) => repo.stargazers_count >= 1
+        );
+
+        setRepos(filteredRepos);
+        console.log(filteredRepos);
+      })
+      .catch((err) => console.log(err));
+  };
+
   useEffect(() => {
     const importStyledRef = document.querySelector("p.import-styled");
     const canvaRef = document.querySelector("p.main-styled");
@@ -19,7 +39,10 @@ const Portfolio = () => {
       loop: false,
       strings: ["<MainStyled></MainStyled>"],
     });
+
+    getReposAxios();
   }, []);
+  useEffect(() => {}, []);
   return (
     <MainStyled>
       <DivStyled className="message-current">

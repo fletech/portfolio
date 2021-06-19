@@ -23,64 +23,48 @@ const Contact = ({
   setModalClassName,
 }) => {
   const [buttonClassName, setButtonClassName] = useState("");
-
-  const [submitted, setSubmitted] = useState(false);
   const [posted, setPosting] = useState(false);
-  //handlers
 
+  //handlers
   const buttonHandler = (e) => {
     e.preventDefault();
-    setSubmitted(true);
+    if (buttonClassName === "active") {
+      setPosting(true);
+      const body = {
+        subject: subject,
+        message: message,
+        name: name,
+        email: email,
+      };
+      axios
+        .post("https://fletapi.herokuapp.com/facundo/api/new-message", body)
+        .then((response) => {
+          console.log(response.data);
+          setPosting(false);
+          setSubject("");
+          setMessage("");
+          setName("");
+          setEmail("");
+          setButtonClassName("");
+          setModalClassName("successed");
+
+          setTimeout(() => {
+            setModalClassName("");
+          }, 3000);
+        })
+        .catch((err) => console.log(err));
+    }
   };
+
   //Use effect
 
   useEffect(() => {
     if (subject !== "" && message !== "" && name !== "" && email !== "") {
       setButtonClassName("active");
-
-      if (submitted) {
-        setPosting(true);
-        const body = {
-          subject: subject,
-          message: message,
-          name: name,
-          email: email,
-        };
-        axios
-          .post("https://fletapi.herokuapp.com/facundo/api/new-message", body)
-          .then((response) => {
-            console.log(response.data);
-            setPosting(false);
-            setSubject("");
-            setMessage("");
-            setName("");
-            setEmail("");
-            setButtonClassName("");
-            setModalClassName("successed");
-
-            setTimeout(() => {
-              setSubmitted(false);
-              setModalClassName("");
-            }, 3000);
-          })
-          .catch((err) => console.log(err));
-      }
     } else {
       setButtonClassName("");
     }
-  }, [
-    subject,
-    message,
-    name,
-    email,
-    setSubject,
-    setMessage,
-    setName,
-    setEmail,
-    submitted,
-    posted,
-    setModalClassName,
-  ]);
+  }, [subject, message, name, email]);
 
   return (
     <MainStyled>

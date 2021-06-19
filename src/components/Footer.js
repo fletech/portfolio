@@ -40,7 +40,7 @@ const FooterStyled = styled.footer`
       color: orange;
     }
     a i.fa-react {
-      animation: spin 5s infinite;
+      animation: spin 5s linear infinite;
     }
     span {
       color: orange;
@@ -52,7 +52,7 @@ const FooterStyled = styled.footer`
       transform: rotate(0deg);
     }
     25% {
-      transform: rotate(1500deg);
+      transform: rotate(900deg);
     }
     50% {
       transform: rotate(90deg);

@@ -49,6 +49,12 @@ const Admin = () => {
 const AdminStyled = styled(MainStyled)`
   flex-direction: row;
   width: 100%;
+  @media (max-width: 600px) {
+    flex-direction: column;
+    align-items: center;
+    justify-content
+
+  }
   aside {
     width: 30%;
     height: 70%;
@@ -59,6 +65,12 @@ const AdminStyled = styled(MainStyled)`
     top: 0;
     left: 0;
     pointer-events: none;
+    @media (max-width: 600px) {
+      width: 100%;
+      display: flex;
+      height: auto;
+      position: relative;
+    }
     p {
       color: orange;
       width: 10rem;
