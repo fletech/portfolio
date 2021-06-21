@@ -61,7 +61,7 @@ const FormStyled = styled.form`
   }
 
   button {
-    width: 5rem;
+    width: 10rem;
     height: 2rem;
     border-radius: 1rem;
     border: none;

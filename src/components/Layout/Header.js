@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { menuDisplayHandler } from "../utils";
+import { menuDisplayHandler } from "../../utils";
 
 const Header = ({ menuDisplay, setMenuDisplay }) => {
   return (

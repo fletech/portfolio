@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import styled from "styled-components";
-import { menuDisplayHandler } from "../utils";
+import { menuDisplayHandler } from "../../utils";
 import Social from "./Social";
 
 const Aside = ({ className, menuDisplay, setMenuDisplay }) => {

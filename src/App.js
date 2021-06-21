@@ -5,7 +5,7 @@ import { Route, Switch, useLocation } from "react-router-dom";
 import Portfolio from "./pages/Portfolio";
 import Admin from "./pages/Admin";
 import Contact from "./pages/Contact";
-import Layout from "./components/Layout";
+import Layout from "./components/Layout/";
 import Home from "./pages/Home";
 import { GlobalStyle } from "./components/GlobalStyles";
 

@@ -19,7 +19,7 @@ font-family: "Noto Sans KR", sans-serif;
 
 html {
   @media (max-width: 600px) {
-    font-size: 80%;
+    font-size: 85%;
   }
 }
 body{

@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
-import Message from "../components/Message";
+import Message from "../components/Admin/Message";
 import Preview from "../components/Preview";
-import { MainStyled } from "../styledComponents";
 
 const Admin = () => {
   const [messages, setMessages] = useState([]);
@@ -25,86 +24,84 @@ const Admin = () => {
         }
       );
   }, []);
-  return (
+  return isLoading ? (
     <AdminStyled>
-      {isLoading && <Preview />}
-
-      {!isLoading && (
-        <>
-          <aside>
-            <p>Messages</p>
-          </aside>
-          <section>
-            <div className="messages">
-              {messages.map((message) => (
-                <Message message={message} className="message" />
-              ))}
-            </div>
-          </section>
-        </>
-      )}
+      <Preview />
+    </AdminStyled>
+  ) : (
+    <AdminStyled>
+      <div className="aside">
+        <p>Messages</p>
+      </div>
+      <div className="messages-section">
+        <div className="messages">
+          {messages.map((message) => (
+            <Message message={message} className="message" />
+          ))}
+        </div>
+      </div>
     </AdminStyled>
   );
 };
-const AdminStyled = styled(MainStyled)`
+const AdminStyled = styled.section`
+  width: 90%;
+  height: 85vh;
+  display: flex;
   flex-direction: row;
-  width: 100%;
+  align-items: center;
   @media (max-width: 600px) {
+    display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content
-
+    justify-content: space-evenly;
   }
-  aside {
-    width: 30%;
+  div.aside {
+    width: 20%;
     height: 70%;
+    pointer-events: none;
     display: grid;
     place-items: center;
-    position: absolute;
-    bottom: 0;
-    top: 0;
-    left: 0;
-    pointer-events: none;
     @media (max-width: 600px) {
       width: 100%;
-      display: flex;
       height: auto;
-      position: relative;
     }
     p {
       color: orange;
-      width: 10rem;
-      height: 2rem;
-      border: solid 2px orange;
+      width: auto;
+      padding: 0.5rem 1rem;
+      border: solid 1px #e6e6e6;
       border-radius: 2rem;
-      display: grid;
-      place-items: center;
       cursor: pointer;
     }
   }
-  section {
-    width: 70%;
-    height: 70vh;
+  div.messages-section {
+    width: 80%;
+    @media (max-width: 600px) {
+      width: 100%;
+      border-radius: 0px;
+    }
+    height: auto;
+    min-height: 50%;
+    max-height: 60vh;
     display: flex;
     flex-direction: column;
-    position: absolute;
-    right: 1rem;
     overflow-y: scroll;
     border-top: solid 1px #d6d6d6;
     border-left: solid 1px #d6d6d6;
     border-bottom: solid 1px #d6d6d6;
-    border-top-left-radius: 1rem;
-    border-bottom-left-radius: 1rem;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
 
     &::-webkit-scrollbar {
       position: absolute;
       left: -100px;
-      height: 50%;
-      width: 10px;
+      width: 5px;
       background-color: #f3f3f3;
     }
     &::-webkit-scrollbar-thumb {
-      background-color: orange;
+      height: 30%;
+
+      background-color: #e2e1e1;
     }
   }
 `;

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import Form from "../components/Form";
+import Form from "../components/Contact/Form";
 
 import styled from "styled-components";
 import {
@@ -150,21 +150,21 @@ const SpinnerStyled = styled.div`
   align-items: center;
   justify-content: space-evenly;
 
-  @keyframes spin {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
-  }
   div.spinner {
     width: 1rem;
     height: 1rem;
     border-radius: 50%;
     border: 2px solid #fff;
-    border-left: 2px solid orange;
-    animation: spin linear 10s infinite;
+    border-left: 2px solid dodgerblue;
+    animation: spin linear 8s infinite;
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
   }
   small {
     color: white;

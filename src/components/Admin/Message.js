@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { date } from "../utils";
+import { date } from "../../utils";
 
 const Message = (props) => {
   const { message, className } = props;

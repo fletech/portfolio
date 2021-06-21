@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import homeImage from "../images/Facundo.jpg";
-import Social from "./Social";
+import Social from "./Layout/Social";
 
 const Main = () => {
   return (
