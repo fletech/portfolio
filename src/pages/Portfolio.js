@@ -24,7 +24,7 @@ const PortfolioStyled = styled(MainStyled)`
   margin: 3rem 0;
 
   @media (max-width: 700px) {
-    width: 100%;
+    width: 90%;
   }
   ul.list-grid {
     display: grid;
