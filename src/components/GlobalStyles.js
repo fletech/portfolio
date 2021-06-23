@@ -10,10 +10,10 @@ export const GlobalStyle = createGlobalStyle`
   text-decoration: none;
   color: #3a3939;
 
-//font-family: "Poppins", sans-serif;
+font-family: "Poppins", sans-serif;
 //font-family: 'Concert One', monospace;
-font-family: "Noto Sans KR", sans-serif;
-  font-weight: 400;
+//font-family: "Noto Sans KR", sans-serif;
+
   //transition: all 0.2s ease-in-out;
 }
 
@@ -32,6 +32,9 @@ body{
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+li{
+  list-style: none;
 }
 
 // @keyframes App-logo-spin

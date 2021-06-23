@@ -1,9 +1,10 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import styled from "styled-components";
 import { menuDisplayHandler } from "../../utils";
 
 const Header = ({ menuDisplay, setMenuDisplay }) => {
+  const location = useLocation();
   return (
     <HeaderStyled>
       <div className="logo-container">
@@ -23,17 +24,23 @@ const Header = ({ menuDisplay, setMenuDisplay }) => {
       <div className="menu">
         <nav className="nav-bar">
           <div className={`nav-list nav-true`}>
-            <p className="nav-item resume">
-              <a href="/resume.pdf" target="_blank" rel="noreferrer">
-                {/* <a href="https://bit.ly/3bgrMDS" target="_blank" rel="noreferrer"> */}
-                Resume
-              </a>
-            </p>
+            {location.pathname !== "/" && (
+              <p className="nav-item portfolio">
+                <Link to="/">Home </Link>
+              </p>
+            )}
+
             <p className="nav-item portfolio">
               <Link to="/portfolio">Portfolio</Link>
             </p>
             <p className="nav-item contact">
               <Link to="/contact">Contact</Link>
+            </p>
+            <p className="nav-item resume">
+              <a href="/resume.pdf" target="_blank" rel="noreferrer">
+                {/* <a href="https://bit.ly/3bgrMDS" target="_blank" rel="noreferrer"> */}
+                Resume
+              </a>
             </p>
           </div>
 

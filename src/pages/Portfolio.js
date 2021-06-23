@@ -8,23 +8,33 @@ import Works from "../components/Portfolio/Works";
 const Portfolio = () => {
   return (
     <PortfolioStyled>
-      {portfolioDB.map((work, i) => {
-        (i + 1) % 2 !== 0
-          ? (work.align = "align-left")
-          : (work.align = "align-right");
-        return <Works object={work} />;
-      })}
+      <ul className="list-grid">
+        {portfolioDB.map((work) => {
+          return <Works object={work} />;
+        })}
+      </ul>
     </PortfolioStyled>
   );
 };
 
 const PortfolioStyled = styled(MainStyled)`
   height: auto;
-  min-height: 50vh;
+
   width: 80%;
   margin: 3rem 0;
+
   @media (max-width: 700px) {
     width: 100%;
+  }
+  ul.list-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    grid-column-gap: 2rem;
+    grid-row-gap: 2rem;
+
+    @media (max-width: 400px) {
+      grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    }
   }
 `;
 export default Portfolio;
