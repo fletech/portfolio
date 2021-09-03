@@ -10,7 +10,9 @@ export const GlobalStyle = createGlobalStyle`
   text-decoration: none;
   color: #3a3939;
 
-font-family: "Poppins", sans-serif;
+/* font-family: "Poppins", sans-serif; */
+font-family: "Padauk", sans-serif;
+
 //font-family: 'Concert One', monospace;
 //font-family: "Noto Sans KR", sans-serif;
 

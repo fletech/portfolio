@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Route, Switch, useLocation } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Route, Switch, useLocation, useHistory } from "react-router-dom";
 
 //Pages
 import Portfolio from "./pages/Portfolio";
@@ -12,6 +12,7 @@ import { GlobalStyle } from "./components/GlobalStyles";
 const App = () => {
   //Location
   const location = useLocation();
+  const history = useHistory();
   //UseState
   const [menuDisplay, setMenuDisplay] = useState(false);
 
@@ -21,6 +22,7 @@ const App = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [modalClassName, setModalClassName] = useState("");
+  const [gap, setGap] = useState(false);
 
   // const [error, setError] = useState(null);
   // const [isLoaded, setIsLoaded] = useState(false);
@@ -52,31 +54,22 @@ const App = () => {
     }
   };
 
-  // useEffect(() => {
-  //   fetch("https://fletapi.herokuapp.com/facundo/api/posts")
-  //     .then((res) => res.json())
-  //     .then(
-  //       (result) => {
-  //         console.log(result);
-  //         setIsLoaded(true);
-  //         setItems(result);
-  //       },
-  //       // Nota: es importante manejar errores aquí y no en
-  //       // un bloque catch() para que no interceptemos errores
-  //       // de errores reales en los componentes.
-  //       (error) => {
-  //         setIsLoaded(true);
-  //         setError(error);
-  //         console.log(error);
-  //       }
-  //     );
-  // }, []);
+  useEffect(() => {
+    let app = document.querySelector(".App");
+    app.addEventListener("click", (e) => {
+      if (e.altKey) {
+        e.preventDefault();
+        history.push("/admin");
+      }
+    });
+  }, []);
 
   return (
     <div className="App">
       <GlobalStyle />
       <Layout menuDisplay={menuDisplay} setMenuDisplay={setMenuDisplay}>
         <Switch location={location} key={location.pathname}>
+          {console.log(gap)}
           <Route path="/" exact>
             <Home />
           </Route>

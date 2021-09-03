@@ -36,7 +36,7 @@ const Admin = () => {
       <div className="messages-section">
         <div className="messages">
           {messages.map((message) => (
-            <Message message={message} className="message" />
+            <Message message={message} className="message" key={message.id} />
           ))}
         </div>
       </div>
