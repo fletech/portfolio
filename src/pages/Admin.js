@@ -5,10 +5,12 @@ import Preview from "../components/Preview";
 
 const Admin = () => {
   const [messages, setMessages] = useState([]);
+  const [deleted, setDelete] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   useEffect(() => {
     setIsLoading(true);
     fetch("https://fletapi.herokuapp.com/facundo/api/messages")
+      //fetch("http://localhost:3009/facundo/api/messages")
       .then((res) => res.json())
       .then(
         (result) => {
@@ -23,7 +25,8 @@ const Admin = () => {
           console.log(error);
         }
       );
-  }, []);
+  }, [deleted]);
+
   return isLoading ? (
     <AdminStyled>
       <Preview />
@@ -36,7 +39,12 @@ const Admin = () => {
       <div className="messages-section">
         <div className="messages">
           {messages.map((message) => (
-            <Message message={message} className="message" key={message.id} />
+            <Message
+              message={message}
+              className="message"
+              key={message.id}
+              setDelete={setDelete}
+            />
           ))}
         </div>
       </div>
