@@ -11,7 +11,7 @@ const Message = (props) => {
   const deleteMessageAxios = (deleted) => {
     // fetch("https://fletapi.herokuapp.com/facundo/api/messages")
     axios
-      .delete(`https://fletapi.herokuapp.com/api/messages/${deleted}`)
+      .delete(`https://fletapi.herokuapp.com/facundo/api/messages/${deleted}`)
       .then((res) => res)
       .then(
         (result) => {
