@@ -9,7 +9,9 @@ const Admin = () => {
   const [isLoading, setIsLoading] = useState(false);
   useEffect(() => {
     setIsLoading(true);
-    fetch("https://fletapi.herokuapp.com/facundo/api/messages")
+    fetch(
+      "http://ec2-54-213-209-234.us-west-2.compute.amazonaws.com/api/messages"
+    )
       //fetch("http://localhost:3009/facundo/api/messages")
       .then((res) => res.json())
       .then(
