@@ -37,11 +37,11 @@ const Contact = ({
         email: email,
       };
       axios
-        //.post("https://fletapi.herokuapp.com/facundo/api/new-message", body)
-        .post(
-          "http://ec2-54-213-209-234.us-west-2.compute.amazonaws.com/api/new-message",
-          body
-        )
+        .post("https://fletapi.herokuapp.com/api/new-message", body)
+        // .post(
+        //   "http://ec2-54-213-209-234.us-west-2.compute.amazonaws.com/api/new-message",
+        //   body
+        // )
         .then((response) => {
           console.log(response.data);
           setPosting(false);

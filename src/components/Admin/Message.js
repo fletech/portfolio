@@ -11,10 +11,10 @@ const Message = (props) => {
   const deleteMessageAxios = (deleted) => {
     // fetch("https://fletapi.herokuapp.com/facundo/api/messages")
     axios
-      //.delete(`https://fletapi.herokuapp.com/facundo/api/messages/${deleted}`)
-      .delete(
-        `http://ec2-54-213-209-234.us-west-2.compute.amazonaws.com/api/messages/${deleted}`
-      )
+      .delete(`https://fletapi.herokuapp.com/api/messages/${deleted}`)
+      // .delete(
+      //   `http://ec2-54-213-209-234.us-west-2.compute.amazonaws.com/api/messages/${deleted}`
+      // )
       .then((res) => res)
       .then(
         (result) => {

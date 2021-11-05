@@ -9,10 +9,10 @@ const Admin = () => {
   const [isLoading, setIsLoading] = useState(false);
   useEffect(() => {
     setIsLoading(true);
-    fetch(
-      "http://ec2-54-213-209-234.us-west-2.compute.amazonaws.com/api/messages"
-    )
-      //fetch("http://localhost:3009/facundo/api/messages")
+    // fetch(
+    //   "http://ec2-54-213-209-234.us-west-2.compute.amazonaws.com/api/messages"
+    // )
+    fetch("https://fletapi.herokuapp.com/api/new-message")
       .then((res) => res.json())
       .then(
         (result) => {
