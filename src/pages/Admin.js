@@ -12,7 +12,7 @@ const Admin = () => {
     // fetch(
     //   "http://ec2-54-213-209-234.us-west-2.compute.amazonaws.com/api/messages"
     // )
-    fetch("https://fletapi.herokuapp.com/api/new-message")
+    fetch("https://fletapi.herokuapp.com/api/messages")
       .then((res) => res.json())
       .then(
         (result) => {
