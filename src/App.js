@@ -1,5 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { Route, Switch, useLocation, useHistory } from "react-router-dom";
+import {
+  Route,
+  Switch,
+  Routes,
+  BrowserRouter,
+  useLocation,
+  useHistory,
+} from "react-router-dom";
 
 //Pages
 import Portfolio from "./pages/Portfolio";
@@ -12,7 +19,7 @@ import { GlobalStyle } from "./components/GlobalStyles";
 const App = () => {
   //Location
   const location = useLocation();
-  const history = useHistory();
+  // const history = useHistory();
   //UseState
   const [menuDisplay, setMenuDisplay] = useState(false);
 
@@ -54,50 +61,48 @@ const App = () => {
     }
   };
 
-  useEffect(() => {
-    let app = document.querySelector(".App");
-    app.addEventListener("click", (e) => {
-      if (e.altKey) {
-        e.preventDefault();
-        history.push("/admin");
-      }
-    });
-  }, []);
+  // useEffect(() => {
+  //   let app = document.querySelector(".App");
+  //   app.addEventListener("click", (e) => {
+  //     if (e.altKey) {
+  //       e.preventDefault();
+  //       history.push("/admin");
+  //     }
+  //   });
+  // }, []);
 
   return (
     <div className="App">
       <GlobalStyle />
       <Layout menuDisplay={menuDisplay} setMenuDisplay={setMenuDisplay}>
-        <Switch location={location} key={location.pathname}>
+        <Routes location={location} key={location.pathname}>
           {console.log(gap)}
-          <Route path="/" exact>
-            <Home />
-          </Route>
-          <Route path="/admin">
-            <Admin />
-          </Route>
-          <Route path="/portfolio">
-            <Portfolio />
-          </Route>
-          <Route path="/contact" exact>
-            <Contact
-              subject={subject}
-              setSubject={setSubject}
-              message={message}
-              setMessage={setMessage}
-              name={name}
-              setName={setName}
-              email={email}
-              setEmail={setEmail}
-              modalClassName={modalClassName}
-              setModalClassName={setModalClassName}
-              onChangeHandler={onChangeHandler}
-            />
-          </Route>
-          {/* <Route path="/blog">
-          <Blog isLoaded={isLoaded} error={error} items={items} />
-        </Route> */}
-        </Switch>
+          <Route element={<Home />} path="/" exact />
+
+          <Route element={<Admin />} path="/admin" />
+
+          <Route element={<Portfolio />} path="/portfolio" />
+
+          <Route
+            element={
+              <Contact
+                subject={subject}
+                setSubject={setSubject}
+                message={message}
+                setMessage={setMessage}
+                name={name}
+                setName={setName}
+                email={email}
+                setEmail={setEmail}
+                modalClassName={modalClassName}
+                setModalClassName={setModalClassName}
+                onChangeHandler={onChangeHandler}
+              />
+            }
+            path="/contact"
+            exact
+          />
+        </Routes>
       </Layout>
     </div>
   );

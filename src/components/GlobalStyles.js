@@ -3,6 +3,8 @@ import { createGlobalStyle } from "styled-components";
 export const GlobalStyle = createGlobalStyle`
 
 
+
+
 * {
   margin: 0;
   padding: 0;
@@ -11,7 +13,9 @@ export const GlobalStyle = createGlobalStyle`
   color: #3a3939;
 
 /* font-family: "Poppins", sans-serif; */
-font-family: "Padauk", sans-serif;
+
+
+font-family: "Plus Jakarta Sans", sans-serif;
 
 //font-family: 'Concert One', monospace;
 //font-family: "Noto Sans KR", sans-serif;

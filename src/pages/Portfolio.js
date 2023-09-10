@@ -7,19 +7,21 @@ import Works from "../components/Portfolio/Works";
 
 const Portfolio = () => {
   return (
-    <PortfolioStyled>
-      <ul className="list-grid">
-        {portfolioDB.map((work) => {
-          return <Works object={work} />;
-        })}
-      </ul>
-    </PortfolioStyled>
+    portfolioDB && (
+      <PortfolioStyled>
+        <ul className="list-grid">
+          {portfolioDB.map((work) => {
+            return <Works object={work} />;
+          })}
+        </ul>
+      </PortfolioStyled>
+    )
   );
 };
 
 const PortfolioStyled = styled(MainStyled)`
   height: auto;
-
+  min-height: 70vh;
   width: 80%;
   margin: 3rem 0;
 

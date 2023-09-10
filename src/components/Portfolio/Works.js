@@ -17,10 +17,10 @@ const Works = ({ object }) => {
     object;
 
   return (
-    <WorksStyled onMouseOver={hoverHandler} onMouseLeave={hoverOutHandler}>
-      <div className={`layer-bg ${JSON.stringify(hover)}`}></div>
+    <WorksStyled>
+      <div className={`layer-bg ${JSON.stringify()}`}></div>
       <a
-        className={`link-to-project ${hover}`}
+        className={`link-to-project `}
         href={link}
         target="_blank"
         rel="noreferrer"
@@ -28,7 +28,7 @@ const Works = ({ object }) => {
         <img src={image} alt="super" />
       </a>
 
-      <div className={`work-card ${hover}`}>
+      <div className={`work-card `}>
         <div className={`work-content`}>
           <div className="content content-briefing">
             <p>{type}</p>
@@ -69,26 +69,13 @@ const WorksStyled = styled.li`
   width: 100%;
   height: 100%;
   position: relative;
+  border: solid 2px;
   //padding: 1rem 0;
   //margin-bottom: 6rem;
-  div.layer-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgb(255, 234, 72);
-    z-index: 2;
-    pointer-events: none;
-    &.true {
-      background-color: rgba(99, 98, 96, 0.233);
-    }
-  }
 
   a.link-to-project {
     height: 100%;
     width: 100%;
-    visibility: hidden;
 
     &.true {
       visibility: visible;
@@ -113,6 +100,7 @@ const WorksStyled = styled.li`
     pointer-events: none;
     padding: 1rem;
     transition: all 0.2s ease;
+    background-color: #212121c0;
     h2,
     p,
     span,
@@ -120,7 +108,6 @@ const WorksStyled = styled.li`
       color: orange;
     }
     &.true {
-      background-color: #302f2f84;
     }
 
     div.content-tech {
