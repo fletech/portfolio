@@ -121,11 +121,14 @@ const HeaderStyled = styled.header`
           list-style: none;
         }
         p.resume {
-          border-radius: 30px;
-          animation: background-change 5s infinite;
+          border-radius: 8px;
+          /* animation: background-change 5s; */
+          background-color: orange;
+
           a {
-            animation: color-change 5s infinite;
+            /* animation: color-change 5s; */
             padding: 0px 10px;
+            color: white;
           }
         }
         p.contact {
@@ -188,10 +191,10 @@ const HeaderStyled = styled.header`
       background-color: white;
     }
     50% {
-      background-color: orange;
+      background-color: white;
     }
     100% {
-      background-color: white;
+      background-color: orange;
     }
   }
 
