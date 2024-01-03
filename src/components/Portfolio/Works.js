@@ -73,6 +73,10 @@ const WorksStyled = styled.li`
   //padding: 1rem 0;
   //margin-bottom: 6rem;
 
+  @media (min-width: 700px) {
+    min-height: 40vh;
+  }
+
   a.link-to-project {
     height: 100%;
     width: 100%;
@@ -98,7 +102,7 @@ const WorksStyled = styled.li`
     width: 100%;
     color: orange !important;
     pointer-events: none;
-    padding: 1rem;
+    padding: 2rem;
     transition: all 0.2s ease;
     background-color: #212121c0;
     h2,

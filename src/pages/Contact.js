@@ -37,7 +37,7 @@ const Contact = ({
         email: email,
       };
       axios`https://data.mongodb-api.com/app/609b04247e49f3062206e3ff#/endpoint/data/v1/action/insertOne`
-        .post("https://fletapi.herokuapp.com/api/new-message", body)
+        //.post("https://fletapi.herokuapp.com/api/new-message", body)
         // .post(
         //   "http://ec2-54-213-209-234.us-west-2.compute.amazonaws.com/api/new-message",
         //   body
@@ -72,6 +72,9 @@ const Contact = ({
 
   return (
     <MainStyled>
+      <SectionStyled>
+        <p>Leave me a message and I will reply you as soon as possible 🙂</p>
+      </SectionStyled>
       <Form method="POST">
         <p>
           <label id="subject" htmlFor="">
@@ -147,6 +150,20 @@ const Contact = ({
     </MainStyled>
   );
 };
+
+const SectionStyled = styled.section`
+  width: 100%;
+  margin: 0 auto;
+  p {
+    font-size: 1.2rem;
+    font-weight: 900;
+    color: #474747;
+    text-align: center;
+    @media (max-width: 700px) {
+      font-size: 1rem;
+    }
+  }
+`;
 const SpinnerStyled = styled.div`
   width: 100%;
   height: 100%;

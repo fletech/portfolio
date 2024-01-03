@@ -1,4 +1,4 @@
-import React from "react";
+import { useEffect, useState } from "react";
 import { portfolioDB } from "../helpers/portfolio-db";
 import styled from "styled-components";
 
@@ -6,16 +6,32 @@ import { MainStyled } from "../styledComponents";
 import Works from "../components/Portfolio/Works";
 
 const Portfolio = () => {
+  const [rendered, setRendered] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setRendered(true);
+    }, 600);
+
+    return () => {
+      clearTimeout(timer);
+    };
+  }, []);
   return (
-    portfolioDB && (
-      <PortfolioStyled>
+    <PortfolioStyled>
+      {!rendered ? (
+        <SpinnerStyled className="spinner-container">
+          <div className="spinner"></div>
+          <p>Loading</p>
+        </SpinnerStyled>
+      ) : (
         <ul className="list-grid">
-          {portfolioDB.map((work) => {
-            return <Works object={work} />;
-          })}
+          {portfolioDB.map((object) => (
+            <Works object={object} />
+          ))}
         </ul>
-      </PortfolioStyled>
-    )
+      )}
+    </PortfolioStyled>
   );
 };
 
@@ -35,8 +51,42 @@ const PortfolioStyled = styled(MainStyled)`
     grid-row-gap: 2rem;
 
     @media (max-width: 400px) {
-      grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
     }
+  }
+`;
+
+const SpinnerStyled = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  div.spinner {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    border: 4px solid #fff999;
+    border-left: 4px solid orange;
+    animation: spin linear 2s infinite;
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+      50% {
+        transform: rotate(180deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  }
+  p {
+    color: orange;
+    font-size: 1.5rem;
+    font-weight: 900;
+    margin-left: 1rem;
   }
 `;
 export default Portfolio;

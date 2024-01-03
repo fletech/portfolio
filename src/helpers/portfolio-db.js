@@ -3,18 +3,31 @@ import SuperHero from "../images/projects/super-hero-web.png";
 import Combina from "../images/projects/Combina.png";
 import Minorfy from "../images/projects/Minorfy.png";
 import Treintaonce from "../images/projects/Treintaonce.png";
+import Counter from "../images/projects/Counter.png";
+import IDP from "../images/projects/IDP.png";
 
 export const portfolioDB = [
   {
-    title: "Music player",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis eveniet, incidunt ad animi minus, doloribus velit quae aliquid !",
-    briefing: "lorem ipsum dolor sit amet consectetur",
-    type: "Web-site",
-    techs: ["React"],
-    link: "http://minorfy.herokuapp.com/",
-    repo: "https://github.com/fletech/minorfy-musicplayer",
-    image: Minorfy,
+    title: "Fancy Counter",
+    description: "Digital stained glass.",
+    briefing: "A counter to get back to coding after a two-months-break.",
+    type: "A never-useful tool",
+    techs: ["React", "Vite.js"],
+    link: "https://github.com/fletech/counter",
+    repo: "https://github.com/fletech/counter",
+    image: Counter,
+    building: true,
+  },
+  {
+    title: "Internal tool for a cleaning company",
+    description: "Digital stained glass.",
+    briefing: "A BO tool to manage the cleaning orders.",
+    type: "Dashboard",
+    techs: ["Appsheet integration", "JS in Google Sheets"],
+    link: "/IDP.png",
+    repo: "https://github.com/fletech",
+    image: IDP,
+    building: true,
   },
   {
     title: "TreintaONce",
@@ -26,6 +39,17 @@ export const portfolioDB = [
     repo: "https://github.com/fletech/treintaonce",
     image: Treintaonce,
     building: true,
+  },
+  {
+    title: "Music player",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis eveniet, incidunt ad animi minus, doloribus velit quae aliquid !",
+    briefing: "lorem ipsum dolor sit amet consectetur",
+    type: "Web-site",
+    techs: ["React"],
+    link: "http://minorfy.herokuapp.com/",
+    repo: "https://github.com/fletech/minorfy-musicplayer",
+    image: Minorfy,
   },
   {
     title: "Caniada e-commerce",

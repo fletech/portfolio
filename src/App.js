@@ -76,7 +76,6 @@ const App = () => {
       <GlobalStyle />
       <Layout menuDisplay={menuDisplay} setMenuDisplay={setMenuDisplay}>
         <Routes location={location} key={location.pathname}>
-          {console.log(gap)}
           <Route element={<Home />} path="/" exact />
 
           <Route element={<Admin />} path="/admin" />
