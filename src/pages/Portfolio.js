@@ -69,14 +69,12 @@ const SpinnerStyled = styled.div`
     border-radius: 50%;
     border: 4px solid #fff999;
     border-left: 4px solid orange;
-    animation: spin linear 2s infinite;
+    animation: spin 1s linear infinite;
     @keyframes spin {
       0% {
         transform: rotate(0deg);
       }
-      50% {
-        transform: rotate(180deg);
-      }
+
       100% {
         transform: rotate(360deg);
       }
