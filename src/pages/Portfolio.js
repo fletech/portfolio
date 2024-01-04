@@ -6,20 +6,20 @@ import { MainStyled } from "../styledComponents";
 import Works from "../components/Portfolio/Works";
 
 const Portfolio = () => {
-  const [rendered, setRendered] = useState(false);
+  // const [rendered, setRendered] = useState(false);
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setRendered(true);
-    }, 600);
+  // useEffect(() => {
+  //   const timer = setTimeout(() => {
+  //     setRendered(true);
+  //   }, 600);
 
-    return () => {
-      clearTimeout(timer);
-    };
-  }, []);
+  //   return () => {
+  //     clearTimeout(timer);
+  //   };
+  // }, []);
   return (
     <PortfolioStyled>
-      {!rendered ? (
+      {!portfolioDB.length != 0 ? (
         <SpinnerStyled className="spinner-container">
           <div className="spinner"></div>
           <p>Loading</p>
