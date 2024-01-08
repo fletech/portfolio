@@ -14,15 +14,20 @@ const Main = () => {
         </div>
         <h2>Hello, I'm Facundo Garcia</h2>
       </div>
+      <p>
+        A self-taught full-stack developer with a background in music and
+        gastronomy.
+      </p>
+      <p>
+        I'm passionate about learning and building things that make people's
+        needs an easy-going.
+      </p>
+
+      <p>Based in Sweden 🇸🇪</p>
 
       <div className="about-me">
         <div className="description">
-          <h3>
-            Node.js Full stack focusing on front-end with React and its
-            environment.{" "}
-          </h3>
-          <p></p>
-          <h4>Currently coding to deliver something great.</h4>
+          <small>Send me a message if you'd like to share your ideas</small>
         </div>
 
         <Social />
@@ -105,7 +110,12 @@ const SectionStyled = styled.main`
       h3 {
         color: #474747;
       }
+      p {
+        margin: 10px 0px;
+        text-indent: 1rem;
+      }
       h4 {
+        margin: 10px 0px;
         font-weight: 200;
       }
     }

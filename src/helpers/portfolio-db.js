@@ -5,19 +5,21 @@ import Minorfy from "../images/projects/Minorfy.png";
 import Treintaonce from "../images/projects/Treintaonce.png";
 import Counter from "../images/projects/Counter.png";
 import IDP from "../images/projects/IDP.png";
+import GestionSimple from "../images/projects/gestion-simple.png";
 
 export const portfolioDB = [
   {
-    title: "Fancy Counter",
-    description: "Digital stained glass.",
-    briefing: "A counter to get back to coding after a two-months-break.",
-    type: "A never-useful tool",
-    techs: ["React", "Vite.js"],
-    link: "https://github.com/fletech/counter",
-    repo: "https://github.com/fletech/counter",
-    image: Counter,
+    title: "Landing page for an Argentinian company ",
+    description: "managment",
+    briefing: "A well designed website for reach potential clients.",
+    type: "Landing",
+    techs: ["NEXT.js", "Strapi", "TailwindCSS"],
+    link: "https://optimum.vercel.app/",
+    repo: "https://github.com/fletech/optimum",
+    image: GestionSimple,
     building: true,
   },
+
   {
     title: "Internal tool for a cleaning company",
     description: "Digital stained glass.",
@@ -29,6 +31,7 @@ export const portfolioDB = [
     image: IDP,
     building: true,
   },
+
   {
     title: "TreintaONce",
     description: "Digital stained glass.",
@@ -50,6 +53,17 @@ export const portfolioDB = [
     link: "http://minorfy.herokuapp.com/",
     repo: "https://github.com/fletech/minorfy-musicplayer",
     image: Minorfy,
+  },
+  {
+    title: "Fancy Counter",
+    description: "Digital stained glass.",
+    briefing: "A counter to get back to coding after a two-months-break.",
+    type: "A never-useful tool",
+    techs: ["React", "Vite.js"],
+    link: "https://github.com/fletech/counter",
+    repo: "https://github.com/fletech/counter",
+    image: Counter,
+    building: true,
   },
   {
     title: "Caniada e-commerce",
