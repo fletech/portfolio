@@ -68,7 +68,7 @@ const SectionStyled = styled.main`
       width: auto;
       margin-right: 1rem;
       span {
-        font-size: 2rem;
+        font-size: 2.1rem;
       }
       p {
         animation: shake 0.5s linear infinite;
