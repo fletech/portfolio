@@ -6,6 +6,7 @@ import Treintaonce from "../images/projects/Treintaonce.png";
 import Counter from "../images/projects/Counter.png";
 import IDP from "../images/projects/IDP.png";
 import GestionSimple from "../images/projects/gestion-simple.png";
+import WordCounter from "../images/projects/WordCounter.png";
 
 export const portfolioDB = [
   {
@@ -53,6 +54,17 @@ export const portfolioDB = [
     link: "http://minorfy.herokuapp.com/",
     repo: "https://github.com/fletech/minorfy-musicplayer",
     image: Minorfy,
+  },
+  {
+    title: "Words Counter",
+    description: "",
+    briefing: "A counter to analyse a whole text.",
+    type: "A never-useful tool",
+    techs: ["React", "Vite.js"],
+    link: "https://github.com/fletech/counter",
+    repo: "https://github.com/fletech/counter",
+    image: WordCounter,
+    building: true,
   },
   {
     title: "Fancy Counter",
