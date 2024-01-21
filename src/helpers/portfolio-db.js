@@ -7,6 +7,7 @@ import Counter from "../images/projects/Counter.png";
 import IDP from "../images/projects/IDP.png";
 import GestionSimple from "../images/projects/gestion-simple.png";
 import WordCounter from "../images/projects/WordCounter.png";
+import Trekbag from "../images/projects/Trekbag.png";
 
 export const portfolioDB = [
   {
@@ -64,6 +65,17 @@ export const portfolioDB = [
     link: "https://github.com/fletech/counter",
     repo: "https://github.com/fletech/counter",
     image: WordCounter,
+    building: true,
+  },
+  {
+    title: "Trek Bag",
+    description: "",
+    briefing: "A tool for handling items to do not forget packing.",
+    type: "A never-useful tool",
+    techs: ["React", "Vite.js"],
+    link: "https://github.com/fletech/counter",
+    repo: "https://github.com/fletech/counter",
+    image: Trekbag,
     building: true,
   },
   {
