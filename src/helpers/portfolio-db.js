@@ -5,25 +5,39 @@ import Minorfy from "../images/projects/Minorfy.png";
 import Treintaonce from "../images/projects/Treintaonce.png";
 import Counter from "../images/projects/Counter.png";
 import IDP from "../images/projects/IDP.png";
-import GestionSimple from "../images/projects/gestion-simple.png";
+import GestionSimple from "../images/projects/GestionSimple.png";
 import WordCounter from "../images/projects/WordCounter.png";
 import Trekbag from "../images/projects/Trekbag.png";
 
 export const portfolioDB = [
   {
     title: "Landing page for an Argentinian company ",
+    id: 1,
     description: "managment",
     briefing: "A well designed website for reach potential clients.",
     type: "Landing",
     techs: ["NEXT.js", "Strapi", "TailwindCSS"],
-    link: "https://optimum.vercel.app/",
+    link: "https://gestionsimple.vercel.app/",
     repo: "https://github.com/fletech/optimum",
     image: GestionSimple,
     building: true,
   },
 
   {
+    title: "TreintaONce",
+    id: 2,
+    description: "Digital stained glass.",
+    briefing: "A site to show up past productions.",
+    type: "Website",
+    techs: ["React", "framer-motion", "React-query", "Vite.js"],
+    link: "https://treintaonce.vercel.app/",
+    repo: "https://github.com/fletech/treintaonce",
+    image: Treintaonce,
+    building: true,
+  },
+  {
     title: "Internal tool for a cleaning company",
+    id: 3,
     description: "Digital stained glass.",
     briefing: "A BO tool to manage the cleaning orders.",
     type: "Dashboard",
@@ -33,20 +47,9 @@ export const portfolioDB = [
     image: IDP,
     building: true,
   },
-
-  {
-    title: "TreintaONce",
-    description: "Digital stained glass.",
-    briefing: "A site to show up past productions.",
-    type: "Web-site",
-    techs: ["React", "framer-motion", "React-query", "Vite.js"],
-    link: "https://treintaonce.vercel.app/",
-    repo: "https://github.com/fletech/treintaonce",
-    image: Treintaonce,
-    building: true,
-  },
   {
     title: "Music player",
+    id: 4,
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis eveniet, incidunt ad animi minus, doloribus velit quae aliquid !",
     briefing: "lorem ipsum dolor sit amet consectetur",
@@ -58,31 +61,34 @@ export const portfolioDB = [
   },
   {
     title: "Words Counter",
+    id: 5,
     description: "",
     briefing: "A counter to analyse a whole text.",
-    type: "A never-useful tool",
+    type: "A tiny tool",
     techs: ["React", "Vite.js"],
-    link: "https://words-counter.facundo.ar",
+    link: "https://fwordscounter.vercel.app",
     repo: "https://github.com/fletech/counter",
     image: WordCounter,
     building: true,
   },
   {
     title: "Trek Bag",
+    id: 6,
     description: "",
     briefing: "A tool for handling items to do not forget packing.",
-    type: "A never-useful tool",
+    type: "A tiny tool",
     techs: ["React", "Vite.js"],
-    link: "https://trekbag.facundo.ar",
+    link: "https://trekbagf.vercel.app",
     repo: "https://github.com/fletech/trekbag",
     image: Trekbag,
     building: true,
   },
   {
     title: "Fancy Counter",
+    id: 7,
     description: "Digital stained glass.",
     briefing: "A counter to get back to coding after a two-months-break.",
-    type: "A never-useful tool",
+    type: "A tiny tool",
     techs: ["React", "Vite.js"],
     link: "https://github.com/fletech/counter",
     repo: "https://github.com/fletech/counter",
@@ -91,6 +97,7 @@ export const portfolioDB = [
   },
   {
     title: "Caniada e-commerce",
+    id: 8,
     description:
       "Currently out of order due to Heroku policies from October 2022. Yet you might check the repo.",
     briefing: "lorem ipsum dolor sit amet consectetur",
@@ -103,6 +110,7 @@ export const portfolioDB = [
 
   {
     title: "SuperHero Challange",
+    id: 9,
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis eveniet, incidunt ad animi minus, doloribus velit quae aliquid !",
     briefing: "lorem ipsum dolor sit amet consectetur",
@@ -115,6 +123,7 @@ export const portfolioDB = [
   },
   {
     title: "Photo Portfolio",
+    id: 10,
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis eveniet, incidunt ad animi minus, doloribus velit quae aliquid !",
     briefing: "lorem ipsum dolor sit amet consectetur",

@@ -15,10 +15,10 @@ export const GlobalStyle = createGlobalStyle`
 /* font-family: "Poppins", sans-serif; */
 
 
-font-family: "Plus Jakarta Sans", sans-serif;
+// font-family: "Plus Jakarta Sans", sans-serif;
 
-//font-family: 'Concert One', monospace;
-//font-family: "Noto Sans KR", sans-serif;
+// font-family: 'Concert One', monospace;
+font-family: Geist, sans-serif;
 
   //transition: all 0.2s ease-in-out;
 }

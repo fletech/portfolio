@@ -22,7 +22,9 @@ const FormStyled = styled.form`
     border-bottom: solid 1px #dbdbdb;
     margin-bottom: 1rem;
     label {
-      font-weight: 600;
+      font-family: "Inter", sans-serif;
+      font-size: 1rem;
+      font-weight: 300;
       color: #474747;
     }
     input {
@@ -45,7 +47,7 @@ const FormStyled = styled.form`
       @media (max-width: 768px) {
         font-size: 16px;
       }
-      height: 4rem;
+      form-sizing: content;
       border: none;
       color: #474747;
       width: 100%;
@@ -63,7 +65,7 @@ const FormStyled = styled.form`
   button {
     width: 10rem;
     height: 2rem;
-    border-radius: 1rem;
+    border-radius: 0.4rem;
     border: none;
     background-color: #dbdbdb;
     color: #474747;
@@ -72,7 +74,8 @@ const FormStyled = styled.form`
   }
   button.active {
     background-color: orange;
-    color: white;
+    color: #474747;
+    font-weight: 900;
     cursor: pointer;
     overflow: hidden;
   }

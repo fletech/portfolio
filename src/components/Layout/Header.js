@@ -16,7 +16,7 @@ const Header = ({ menuDisplay, setMenuDisplay }) => {
 
         <div className="logo-name">
           <Link to="/">
-            <h2>{"{ ...f }"}</h2>
+            <h2>{"{ ...fg } "}</h2>
           </Link>
         </div>
       </div>
@@ -62,7 +62,7 @@ const Header = ({ menuDisplay, setMenuDisplay }) => {
 
 const HeaderStyled = styled.header`
   padding: 0 5rem;
-  width: 100%;
+  width: 80%;
   min-height: 5rem;
   height: 10vh;
   display: flex;
@@ -91,6 +91,7 @@ const HeaderStyled = styled.header`
       align-items: center;
       h2 {
         font-weight: 600;
+        font-size: 1.2rem;
       }
     }
   }
@@ -124,11 +125,12 @@ const HeaderStyled = styled.header`
           border-radius: 8px;
           /* animation: background-change 5s; */
           background-color: orange;
+          font-weight: 900;
 
           a {
             /* animation: color-change 5s; */
             padding: 0px 10px;
-            color: white;
+            color: #474747;
           }
         }
         p.contact {

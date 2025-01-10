@@ -100,7 +100,7 @@ const WorksStyled = styled.li`
     bottom: 0;
     left: 0;
     width: 100%;
-    color: orange !important;
+    color: tamato !important;
     pointer-events: none;
     padding: 2rem;
     transition: all 0.2s ease;

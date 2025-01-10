@@ -12,7 +12,7 @@ const Admin = () => {
     // fetch(
     //   "http://ec2-54-213-209-234.us-west-2.compute.amazonaws.com/api/messages"
     // )
-    fetch("https://api.facundo.ar/api/messages")
+    fetch("https://api-fletech.vercel.app/api/messages")
       .then((res) => res.json())
       .then(
         (result) => {

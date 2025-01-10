@@ -6,20 +6,20 @@ import { MainStyled } from "../styledComponents";
 import Works from "../components/Portfolio/Works";
 
 const Portfolio = () => {
-  // const [rendered, setRendered] = useState(false);
+  const [rendered, setRendered] = useState(false);
 
-  // useEffect(() => {
-  //   const timer = setTimeout(() => {
-  //     setRendered(true);
-  //   }, 600);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setRendered(true);
+    }, 400);
 
-  //   return () => {
-  //     clearTimeout(timer);
-  //   };
-  // }, []);
+    return () => {
+      clearTimeout(timer);
+    };
+  }, []);
   return (
     <PortfolioStyled>
-      {!portfolioDB.length != 0 ? (
+      {!rendered ? (
         <SpinnerStyled className="spinner-container">
           <div className="spinner"></div>
           <p>Loading</p>
@@ -27,7 +27,7 @@ const Portfolio = () => {
       ) : (
         <ul className="list-grid">
           {portfolioDB.map((object) => (
-            <Works object={object} />
+            <Works object={object} key={object.id} />
           ))}
         </ul>
       )}
@@ -67,23 +67,23 @@ const SpinnerStyled = styled.div`
     width: 1rem;
     height: 1rem;
     border-radius: 50%;
-    border: 4px solid #fff999;
+    border: 4px solid white;
     border-left: 4px solid orange;
-    animation: spin 1s ease infinite;
+    animation: spin 10s linear infinite;
     @keyframes spin {
       0% {
         transform: rotate(0deg);
       }
 
       100% {
-        transform: rotate(360deg);
+        transform: rotate(90deg);
       }
     }
   }
   p {
     color: orange;
-    font-size: 1.5rem;
-    font-weight: 900;
+    font-size: 1rem;
+    font-weight: 100;
     margin-left: 1rem;
   }
 `;

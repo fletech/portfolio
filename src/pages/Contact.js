@@ -37,7 +37,7 @@ const Contact = ({
         email: email,
       };
       axios
-        .post("https://api.facundo.ar/api/new-message", body)
+        .post("https://api-fletech.vercel.app/api/new-message", body)
         // .post(
         //   "http://ec2-54-213-209-234.us-west-2.compute.amazonaws.com/api/new-message",
         //   body
@@ -75,6 +75,7 @@ const Contact = ({
       <SectionStyled>
         <p>Leave me a message and I will reply you as soon as possible 🙂</p>
       </SectionStyled>
+
       <Form method="POST">
         <p>
           <label id="subject" htmlFor="">
@@ -144,7 +145,10 @@ const Contact = ({
         </button>
         <ModalStyled className={modalClassName} />
         <MessageModalStyled className={modalClassName}>
-          <h3>Message sent ✅! We will contact you asap 👋🏼</h3>
+          <h3>
+            ✅ Message sent! <br />
+            We will contact you asap 👋🏼
+          </h3>
         </MessageModalStyled>
       </Form>
     </MainStyled>
@@ -152,7 +156,7 @@ const Contact = ({
 };
 
 const SectionStyled = styled.section`
-  width: 100%;
+  width: 80%;
   margin: 0 auto;
   p {
     font-size: 1.2rem;
@@ -160,7 +164,7 @@ const SectionStyled = styled.section`
     color: #474747;
     text-align: center;
     @media (max-width: 700px) {
-      font-size: 1rem;
+      font-size: 1.1rem;
     }
   }
 `;
